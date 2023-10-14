@@ -1,23 +1,30 @@
 {
-  "name": "new-cell-store",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "start": "npm-run-all -p start:frontend start:backend",
-    "start:frontend": "cross-env PORT=5000 npm --prefix front run dev",
-    "start:admin": "npm --prefix admin-ui start",
-    "start:backend": "npm --prefix server start",
-    "postinstall": "npm i --prefix front && npm i --prefix server"
-  },
-  "author": "",
-  "license": "ISC",
   "dependencies": {
-    "concurrently": "^8.2.1",
-    "qs": "^6.11.2"
+    "@ant-design/cssinjs": "^1.17.0",
+    "@ant-design/happy-work-theme": "^1.0.0",
+    "antd": "^5.9.4",
+    "next": "latest",
+    "react": "latest",
+    "react-dom": "latest"
   },
   "devDependencies": {
-    "cross-env": "^7.0.3",
-    "npm-run-all": "^4.1.5"
-  }
+    "@types/node": "latest",
+    "@types/react": "latest",
+    "@types/react-dom": "latest",
+    "autoprefixer": "latest",
+    "eslint": "latest",
+    "eslint-config-next": "latest",
+    "postcss": "latest",
+    "tailwindcss": "latest",
+    "typescript": "latest"
+  },
+  "name": "new-cell-store",
+  "private": true,
+  "scripts": {
+    "build": "next build",
+    "dev": "next dev",
+    "lint": "next lint",
+    "start": "next start"
+  },
+  "version": "0.1.0"
 }
