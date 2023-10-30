@@ -2,7 +2,7 @@
   "dependencies": {
     "@ant-design/cssinjs": "^1.17.0",
     "@ant-design/happy-work-theme": "^1.0.0",
-    "antd": "^5.9.4",
+    "antd": "^5.10.2",
     "next": "latest",
     "react": "latest",
     "react-dom": "latest"

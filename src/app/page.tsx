@@ -1,13 +1,16 @@
 "use client"
 
-import { Button, Space } from "antd";
 import { ButtonWrapper } from "@/components";
+import { Space } from "antd";
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
+    <main>
       <Space style={{ padding: 24 }} size="large">
-        <ButtonWrapper name="hola" happy/>
+        <ButtonWrapper name="maicol"
+          showEffect="showShakeEffect"
+          type="primary"
+        />
       </Space>
     </main>
   )

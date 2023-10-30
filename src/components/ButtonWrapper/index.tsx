@@ -1,6 +1,6 @@
-import { Button, ConfigProvider } from 'antd';
-import { ButtonType } from 'antd/es/button';
 import { HappyProvider } from '@ant-design/happy-work-theme';
+import { Button, ConfigProvider } from 'antd';
+import { ButtonProps } from 'antd/es/button/button';
 type WaveConfig = NonNullable<Parameters<typeof ConfigProvider>[0]['wave']>;
 
 // Prepare effect holder
@@ -117,31 +117,30 @@ const funcShowEffect: Record<ITypesShowEffect, WaveConfig['showEffect']> = {
 };
 
 // button props
-interface IButtonProps {
+interface IButtonProps extends ButtonProps {
     name: string;
     showEffect?: ITypesShowEffect;
     disabled?: boolean;
-    type?: ButtonType;
     happy?: boolean;
 }
 
 const ButtonWrapper = ({
     name,
     showEffect = "showInsetEffect",
-    type = "primary",
     disabled,
     happy,
+    ...props
 }: IButtonProps) => (
     <>
         {
             happy ? (
                 <HappyProvider>
-                    <Button type={type}>{name}</Button>
+                    <Button {...props}>{name}</Button>
                 </HappyProvider>
             ) : (
 
                 <ConfigProvider wave={{ showEffect: funcShowEffect[showEffect], disabled }}>
-                    <Button type={type}>{name}</Button>
+                    <Button {...props}>{name}</Button>
                 </ConfigProvider>
             )
         }
